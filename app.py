@@ -40,7 +40,7 @@ if st.session_state["messages"]:
     messages = st.session_state["messages"]
 
     for message in reversed(messages[1:]):  # 直近のメッセージを上に
-        speaker = ""
+        speaker = "おやじ💪"
         if message["role"]=="assistant":
             speaker="ChatGPT🤖"
 
