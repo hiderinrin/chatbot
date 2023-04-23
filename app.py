@@ -19,7 +19,8 @@ def communicate():
     messages.append(user_message)
 
     response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
+        #model="gpt-3.5-turbo",
+        model="gpt-4",
         messages=messages
     )  
 
@@ -39,8 +40,8 @@ if st.session_state["messages"]:
     messages = st.session_state["messages"]
 
     for message in reversed(messages[1:]):  # 直近のメッセージを上に
-        speaker = "🙂"
+        speaker = ""
         if message["role"]=="assistant":
-            speaker="🤖"
+            speaker="ChatGPT🤖"
 
         st.write(speaker + ": " + message["content"])
